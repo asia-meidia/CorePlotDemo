@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B57754C6-30F6-4CBA-9A18-B09228A6FCF3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CorePlotDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0F702AE9D5231CB964D101450551FB9FCB82D061</key>
+		<string>https://github.com/24NewStart/CorePlotDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CorePlotDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0F702AE9D5231CB964D101450551FB9FCB82D061</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/24NewStart/CorePlotDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0F702AE9D5231CB964D101450551FB9FCB82D061</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0F702AE9D5231CB964D101450551FB9FCB82D061</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CorePlotDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
