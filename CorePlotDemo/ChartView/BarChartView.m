@@ -377,13 +377,6 @@
 #pragma mark 创建平面图，柱状图
 - (void)createPlots
 {
-    // 动画
-    CABasicAnimation *fadeInAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    fadeInAnimation.duration            = 3.0f;
-    fadeInAnimation.removedOnCompletion = NO;
-    fadeInAnimation.fillMode            = kCAFillModeForwards;
-    fadeInAnimation.toValue             = [NSNumber numberWithFloat:1.0];
-    
     // 第一个柱状图
     {
         // 第一个参数指定渐变色的开始颜色，默认结束颜色为黑色，第二个参数指定是否绘制水平柱子。
@@ -444,6 +437,13 @@
         
         // 添加动画
         barPlot.opacity = 0.f;
+        
+        // 动画
+        CABasicAnimation *fadeInAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        fadeInAnimation.duration            = 3.0f;
+        fadeInAnimation.removedOnCompletion = NO;
+        fadeInAnimation.fillMode            = kCAFillModeForwards;
+        fadeInAnimation.toValue             = [NSNumber numberWithFloat:1.0];
         [barPlot addAnimation:fadeInAnimation forKey:@"animateOpacity"];
         
     }
@@ -504,8 +504,16 @@
         }
         
         // 添加动画
-        barPlot.opacity = 0.f;
-        [barPlot addAnimation:fadeInAnimation forKey:@"animateOpacity"];
+        barPlot.anchorPoint = CGPointMake(0.5, 0.0);
+        
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+        [anim setDuration:2.0f];
+        anim.toValue = [NSNumber numberWithFloat:1.0f];
+        anim.fromValue = [NSNumber numberWithFloat:0.0f];
+        anim.removedOnCompletion = NO;
+        anim.delegate = self;
+        anim.fillMode = kCAFillModeForwards;
+        [barPlot addAnimation:anim forKey:@"grow"];
     }
 }
 
