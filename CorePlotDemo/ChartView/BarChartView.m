@@ -503,17 +503,24 @@
             barPlot.labelTextStyle = labelTextStyle;
         }
         
-        // 添加动画
-        barPlot.anchorPoint = CGPointMake(0.5, 0.0);
         
-        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
-        [anim setDuration:2.0f];
-        anim.toValue = [NSNumber numberWithFloat:1.0f];
-        anim.fromValue = [NSNumber numberWithFloat:0.0f];
-        anim.removedOnCompletion = NO;
-        anim.delegate = self;
-        anim.fillMode = kCAFillModeForwards;
-        [barPlot addAnimation:anim forKey:@"grow"];
+        // 添加动画
+        {
+            // 锚点设置
+            CPTXYAxisSet *axis = (CPTXYAxisSet *)_hostView.hostedGraph.axisSet;
+            CGPoint point = [axis.yAxis viewPointForCoordinateDecimalNumber:CPTDecimalFromFloat(0)];
+            CGFloat y = point.y/CGRectGetHeight(_hostView.frame);
+            barPlot.anchorPoint = CGPointMake(0.5, y);
+            
+            CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+            [anim setDuration:2.0f];
+            anim.toValue = [NSNumber numberWithFloat:1.0f];
+            anim.fromValue = [NSNumber numberWithFloat:0.0f];
+            anim.removedOnCompletion = NO;
+            anim.delegate = self;
+            anim.fillMode = kCAFillModeForwards;
+            [barPlot addAnimation:anim forKey:@"grow"];
+        }
     }
 }
 
