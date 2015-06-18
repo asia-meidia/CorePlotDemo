@@ -319,6 +319,10 @@
         //显示的刻度
         yAxis.visibleRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(9)];
         
+        // 背景色
+        yAxis.alternatingBandFills = @[[CPTColor colorWithComponentRed:0.910 green:0.933 blue:0.969 alpha:1.000],
+                                       [CPTColor colorWithComponentRed:0.910 green:0.933 blue:0.969 alpha:1.000]];
+        
         // 标题设置
         {
             yAxis.title = @"Y轴";
